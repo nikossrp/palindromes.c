@@ -99,7 +99,7 @@ int main()
             if(Empty(&S)) printf("Palindrome!\n");
         }
 
-     } else printf("palindromes.txt dont exist!!\n");
+     } else printf("palindromes.txt not exist!!\n");
     free(Input);
     
 }
