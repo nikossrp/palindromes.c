@@ -10,12 +10,12 @@ int Match(char c, char d)
 }
 
 
-char *Keepletters(char *str)    //krataei mono ta grammata
+char *Keepletters(char *str)    
 { 
     int i = 0, j = 0; 
     while (str[i]) 
     { 
-        if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >='A' && str[i] <= 'Z')) //an einai kati diaforetiko apo xarakthra to agnwei
+        if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >='A' && str[i] <= 'Z')) 
            str[j++] = str[i]; 
         i++; 
     } 
@@ -23,6 +23,7 @@ char *Keepletters(char *str)    //krataei mono ta grammata
     return str; 
 }
 
+// for the lower letters
 void mikra(char* str)
 { 
     int i = 0;
@@ -58,16 +59,16 @@ int main()
         InitializeArray = Input;
         while((ch = getc(file)) != EOF) { 
             if(ch == '\n') break;
-             InitializeArray[k++] = ch;            //bazw thn prwth protash se enan pinaka
+             InitializeArray[k++] = ch;            //put the first sentence in an array
              
         }
 
         strcpy(word, Input);
-        Keepletters(Input);    //agnohsh kenwn , shmeia stixeis
-        mikra(Input);       //metatropi ola se mikra gramata
+        Keepletters(Input);    //ignore white spaces , punctuation
+        mikra(Input);       //convert lower letters
         slen = strlen(Input);
         printf("%s  ", word);
-        if(slen%2 == 0){    //an einai artios plhthos apo grammata
+        if(slen%2 == 0){    
             for(i = 0; i < slen/2; i++) 
                 Push(&S, Input[i]);
         i = slen/2;
@@ -87,7 +88,7 @@ int main()
             for( i = 0; i < (int)slen/2; i++)   
                 Push(&S, Input[i]);
             i = (int)slen/2;
-            j = i+1;        //agnooume to mesaio stoixeio
+            j = i+1;        //ignore the middle letter
             while(i--){
                 Pop(&S, &temp);
                 if(temp != Input[j++]) { 
