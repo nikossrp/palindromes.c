@@ -1,13 +1,12 @@
-//stiva me listes
+//linked stack
 typedef char ItemType;
 
-typedef struct StackNodeTag{    //mporoume me allon tropo na elenxoume an einai kenh h oxi (NULL)
+typedef struct StackNodeTag{    
    ItemType Item;
    struct StackNodeTag * Link;
 
 }StackNode;
 
-//h stoiva stin ousia einai enas deikths sto prwto stoixeio tis stoivas
-typedef struct{     //h stoiva
+typedef struct{     
    StackNode* ItemList; 
 }Stack;
